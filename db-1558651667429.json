@@ -1,0 +1,52 @@
+{
+  "cadastro": [
+    {
+      "nome": "Juliana",
+      "senha": "julina123",
+      "email": "julina_lindinha@gmail.com",
+      "cnpj": "123.456.789-00",
+      "nomeLoja": "Loja da Tia Snow",
+      "id": 1
+    }
+  ],
+  "cadastroProduto": [
+    {
+      "img": "https://www.khelf.com.br/imagens/produtos/_0/11723932__0/11723932__0_detalhes.jpg",
+      "nome": "Blusa",
+      "categoria": "Camisa com manga",
+      "generoProduto": "f",
+      "filial": "Nova Iguaçu",
+      "preco": "R$ 30,00",
+      "id": 1
+    },
+    {
+      "categoria": "Brinquedo",
+      "img": "https://images-submarino.b2w.io/produtos/01/00/item/7453/2/7453245_1GG.jpg",
+      "nome": "Moto eletrica infantil",
+      "generoProduto": "f",
+      "filial": "Campo grande",
+      "preco": "R$ 360,00",
+      "id": 2
+    },
+    {
+      "img": "https://s3-sa-east-1.amazonaws.com/loja2/fb1a1ce10618c613eff855886594c920.png",
+      "nome": "Jaqueta da SKT1",
+      "categoria": "Casaco",
+      "generoProduto": "U",
+      "filial": "Campo grande",
+      "preco": "R$ 200,00",
+      "id": 3
+    }
+  ],
+  "cadastroFilial": [
+    {
+      "img": "https://iguatemi.com.br/jkiguatemi/sites/jkiguatemi/files/2017-12/Renner.png",
+      "logradouro": "nº 540 - TopShopping, Av. Gov. Roberto Silveira - Centro, Nova Iguaçu - RJ, 26285-060",
+      "telefone1": "(21) 3444-7979",
+      "telefone2": "(21) 3444-7979",
+      "horarioAberto": "8:00",
+      "horarioFechado": "22:00",
+      "id": 1
+    }
+  ]
+}

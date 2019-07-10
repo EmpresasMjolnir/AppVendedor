@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Cadastro Do Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+      <ion-item>
+          <ion-label position="floating">Url Imagem</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.img" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nome do produto</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.nome" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.descricao" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Categoria do produto</ion-label>
+          <ion-select placeholder="Select One" type="text" [(ngModel)]="produto.categoria">
+            <ion-select-option >Medicamento</ion-select-option>
+            <ion-select-option >Higiene</ion-select-option>
+            <ion-select-option >Beleza</ion-select-option>
+            <ion-select-option >Alimento</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <!--<ion-item>
+         <ion-label>Gênero do produto</ion-label>
+          <ion-select placeholder="Select One" type="text" [(ngModel)]="produto.generoProduto">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+            <ion-select-option value="U">Unisex</ion-select-option>
+          </ion-select>
+        </ion-item>-->
+        <ion-item>
+          <ion-label>Filial</ion-label>
+          <ion-select placeholder="Select One" type="text" [(ngModel)]="produto.filial">
+            <ion-select-option>...</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" >Preço</ion-label>
+          <ion-input type="text" [(ngModel)]="produto.preco" value="R$ " ></ion-input>
+        </ion-item>
+  
+  </ion-card>
+  
+  <ion-button color="success" expand="block"  (click)="registraProduto()">Cadastrar</ion-button>
+  
+  </ion-content>
+  

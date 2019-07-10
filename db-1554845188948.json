@@ -1,0 +1,14 @@
+{
+  "cadastro": [
+    {
+      "nome": "Juliana",
+      "senha": "julina123",
+      "email": "julina_lindinha@gmail.com",
+      "cnpj": "123.456.789-00",
+      "nomeLoja": "Loja da Tia Snow",
+      "id": 1
+    }
+  ],
+  "cadastroProduto": [],
+  "cadastroFilial": []
+}

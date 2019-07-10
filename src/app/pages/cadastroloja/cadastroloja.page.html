@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Cadastro loja</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-item>
+          <ion-label position="floating">Url imagem</ion-label>
+          <ion-input type="text" [(ngModel)]="filial.img"></ion-input>
+        </ion-item>
+    <ion-item>
+      <ion-label position="floating">Logradouro</ion-label>
+      <ion-input type="text" [(ngModel)]="filial.logradouro"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Ponto de Referência</ion-label>
+      <ion-input type="text" [(ngModel)]="filial.referencia"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"  >telefone 1</ion-label>
+      <ion-input type="text" [(ngModel)]="filial.telefone1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">telefone 2</ion-label>
+      <ion-input type="text" [(ngModel)]="filial.telefone2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Horário Abertura</ion-label>
+      <ion-input type="text" [(ngModel)]="filial.horarioAberto"></ion-input>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label position="floating">Horário Fechamento</ion-label>
+      <ion-input type="text" [(ngModel)]="filial.horarioFechado"></ion-input>
+    </ion-item>
+    
+    
+</ion-card>
+
+<ion-button color="success" expand="block" (click)="registraFilial()">Cadastrar</ion-button>
+</ion-content>

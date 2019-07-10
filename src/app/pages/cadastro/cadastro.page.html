@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #fc="ngForm" (ngSubmit)="onSubmit(fc)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="vendedor.nome" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="vendedor.email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Senha</ion-label>
+      <ion-input type="password" name="senha" [(ngModel)]="vendedor.senha" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"  >Confirmar Senha</ion-label>
+      <ion-input type="password" name="confirmSenha" [(ngModel)]="confirmSenha" required></ion-input>
+    </ion-item>
+     <ion-item>
+      <ion-label position="floating">Nome da Loja</ion-label>
+      <ion-input type="text" name="nomeLoja" [(ngModel)]="vendedor.nomeLoja" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">CNPJ</ion-label>
+      <ion-input type="text" name="cnpj" [(ngModel)]="vendedor.cnpj" required></ion-input>
+    </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" href="/login">Voltar</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block">
+          Cadastrar
+        </ion-button> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
