@@ -8,51 +8,52 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-card>
-      <ion-item>
+  <form #fc="ngForm" (ngSubmit)="onSubmit(fc)">
+        <ion-item>
           <ion-label position="floating">Url Imagem</ion-label>
-          <ion-input type="text" [(ngModel)]="produto.img" ></ion-input>
+          <ion-input type="text" name="img" [(ngModel)]="produto.img" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Nome do produto</ion-label>
-          <ion-input type="text" [(ngModel)]="produto.nome" ></ion-input>
+          <ion-input type="text" name="nome" [(ngModel)]="produto.nome" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Descrição</ion-label>
-          <ion-input type="text" [(ngModel)]="produto.descricao" ></ion-input>
+          <ion-input type="text" name="descricao" [(ngModel)]="produto.descricao" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Categoria do produto</ion-label>
-          <ion-select placeholder="Select One" type="text" [(ngModel)]="produto.categoria">
+          <ion-select placeholder="Select One" type="text" name="categoria" [(ngModel)]="produto.categoria" required>
             <ion-select-option >Medicamento</ion-select-option>
             <ion-select-option >Higiene</ion-select-option>
             <ion-select-option >Beleza</ion-select-option>
             <ion-select-option >Alimento</ion-select-option>
           </ion-select>
         </ion-item>
-        <!--<ion-item>
-         <ion-label>Gênero do produto</ion-label>
-          <ion-select placeholder="Select One" type="text" [(ngModel)]="produto.generoProduto">
-            <ion-select-option value="f">Female</ion-select-option>
-            <ion-select-option value="m">Male</ion-select-option>
-            <ion-select-option value="U">Unisex</ion-select-option>
-          </ion-select>
-        </ion-item>-->
         <ion-item>
           <ion-label>Filial</ion-label>
-          <ion-select placeholder="Select One" type="text" [(ngModel)]="produto.filial">
+          <ion-select placeholder="Select One" type="text" name="filial" [(ngModel)]="produto.filial" required>
             <ion-select-option>...</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label position="floating" >Preço</ion-label>
-          <ion-input type="text" [(ngModel)]="produto.preco" value="R$ " ></ion-input>
+          <ion-input type="text" name="preco" [(ngModel)]="produto.preco" value="R$ " required></ion-input>
         </ion-item>
-  
-  </ion-card>
-  
-  <ion-button color="success" expand="block"  (click)="registraProduto()">Cadastrar</ion-button>
-  
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button href="/home" color="light" >Voltar</ion-button>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+              <ion-button type="submit" color="success" expand="block">
+                Cadastrar
+              </ion-button> 
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </form>
   </ion-content>
   
