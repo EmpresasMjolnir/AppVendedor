@@ -8,25 +8,25 @@ import { Dados2FilialService } from 'src/app/services/dados2-filial.service';
 })
 export class ListaFilialPage implements OnInit {
 
-  filial:any = [];
+  //filial:any = [];
 
   constructor(private prov: Dados2FilialService) { }
 
   ngOnInit() {
-    this.listaFilial();
+    //this.listaFilial();
   }
 
-  listaFilial(){
-    this.prov.getFilial().subscribe(
+  //listaFilial(){
+    //this.prov.getFilial().subscribe(
 
-      data=>{
-        let resposta = (data as any)._body;
-        resposta = JSON.parse(resposta);
-        this.filial =  resposta;
-      },
-      error=>{
-        console.log(error);
-      }
-    ).add();
-  }
+      //data=>{
+       // let resposta = (data as any)._body;
+        //resposta = JSON.parse(resposta);
+        //this.filial =  resposta;
+      //},
+      //error=>{
+        //console.log(error);
+      //}
+    //).add();
+  //}
 }

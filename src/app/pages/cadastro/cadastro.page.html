@@ -15,13 +15,19 @@
       <ion-input type="email" name="email" [(ngModel)]="vendedor.email" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating" >Senha</ion-label>
-      <ion-input type="password" name="senha" [(ngModel)]="vendedor.senha" required></ion-input>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" name="senha" [(ngModel)]="vendedor.senha" #p="ngModel" minlength="6" required></ion-input>
     </ion-item>
+    <ion-text color="danger" *ngIf="p.invalid && p.dirty">
+      <strong>Senha muito curta!</strong>
+    </ion-text>
     <ion-item>
-      <ion-label position="floating"  >Confirmar Senha</ion-label>
-      <ion-input type="password" name="confirmSenha" [(ngModel)]="confirmSenha" required></ion-input>
+      <ion-label position="floating">Confirmar senha</ion-label>
+      <ion-input type="password" name="conf" ngModel="conf" #c="ngModel" minlength="6" required></ion-input>
     </ion-item>
+    <ion-text color="danger" *ngIf="p.value != c.value">
+      <strong>Senhas diferentes!</strong>
+    </ion-text>
      <ion-item>
       <ion-label position="floating">Nome da Loja</ion-label>
       <ion-input type="text" name="nomeLoja" [(ngModel)]="vendedor.nomeLoja" required></ion-input>
@@ -30,19 +36,18 @@
       <ion-label position="floating">CNPJ</ion-label>
       <ion-input type="text" name="cnpj" [(ngModel)]="vendedor.cnpj" required></ion-input>
     </ion-item>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-button color="light" href="/login">Voltar</ion-button>
-      </ion-col>
-      <ion-col>
-      </ion-col>
-      <ion-col>
-        <ion-button type="submit" color="success" expand="block">
-          Cadastrar
-        </ion-button> 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid>												
+      <ion-row>
+        <ion-col>
+          <ion-button color="light" href="/login">Cancelar</ion-button>
+        </ion-col>
+        <ion-col>
+    
+        </ion-col>
+        <ion-col>
+          <ion-button type="submit" color="success" expand="block" [disabled]="fc.invalid || (p.value != c.value)">Cadastrar</ion-button> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </form>
 </ion-content>

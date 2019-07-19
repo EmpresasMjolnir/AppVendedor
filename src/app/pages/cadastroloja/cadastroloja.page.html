@@ -8,44 +8,54 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <form #fc="ngForm" (ngSubmit)="onSubmit(fc)">
       <ion-item>
           <ion-label position="floating">Url imagem</ion-label>
-          <ion-input type="text" [(ngModel)]="filial.img"></ion-input>
+          <ion-input type="text" name="img" [(ngModel)]="filial.img"></ion-input>
         </ion-item>
     <ion-item>
       <ion-label position="floating">Logradouro</ion-label>
-      <ion-input type="text" [(ngModel)]="filial.logradouro"></ion-input>
+      <ion-input type="text" name="logradouro"  [(ngModel)]="filial.logradouro"></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label position="floating">Ponto de Referência</ion-label>
-      <ion-input type="text" [(ngModel)]="filial.referencia"></ion-input>
+      <ion-input type="text" name="referencia"  [(ngModel)]="filial.referencia"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating"  >telefone 1</ion-label>
-      <ion-input type="text" [(ngModel)]="filial.telefone1"></ion-input>
+      <ion-input type="text" name="telefone1"  [(ngModel)]="filial.telefone1"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">telefone 2</ion-label>
-      <ion-input type="text" [(ngModel)]="filial.telefone2"></ion-input>
+      <ion-input type="text" name="telefone2"  [(ngModel)]="filial.telefone2"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Horário Abertura</ion-label>
-      <ion-input type="text" [(ngModel)]="filial.horarioAberto"></ion-input>
+      <ion-input type="text" name="horarioAberto"  [(ngModel)]="filial.horarioAberto"></ion-input>
     </ion-item>
 
     
     <ion-item>
       <ion-label position="floating">Horário Fechamento</ion-label>
-      <ion-input type="text" [(ngModel)]="filial.horarioFechado"></ion-input>
+      <ion-input type="text" name="horarioFechado"  [(ngModel)]="filial.horarioFechado"></ion-input>
     </ion-item>
-    
-    
-</ion-card>
-
-<ion-button color="success" expand="block" (click)="registraFilial()">Cadastrar</ion-button>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button href="/home" color="light" >Voltar</ion-button>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+            <ion-button type="submit" color="success" expand="block">
+              Cadastrar
+            </ion-button> 
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</form>
 </ion-content>

@@ -13,20 +13,20 @@ export class ListaProdutoPage implements OnInit {
   constructor(private prov: Dados2ProdutosService) { }
 
   ngOnInit() {
-    this.listaProduto();
+    //this.listaProduto();
   }
 
-  listaProduto(){
-    this.prov.getProdutos().subscribe(
+ // listaProduto(){
+  //  this.prov.getProdutos().subscribe(
 
-      data=>{
-        let resposta = (data as any)._body;
-        resposta = JSON.parse(resposta);
-        this.produtos =  resposta;
-      },
-      error=>{
-        console.log(error);
-      }
-    ).add();
-  }
+//      data=>{
+      //  let resposta = (data as any)._body;
+        //resposta = JSON.parse(resposta);
+        //this.produtos =  resposta;
+      //},
+      //error=>{
+       // console.log(error);
+      //}
+    //).add();
+  //}
 }
