@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Dados2FilialService } from 'src/app/services/dados2-filial.service';
+import { DadosFilialService } from 'src/app/services/dados-filial.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lista-filial',
@@ -8,25 +9,33 @@ import { Dados2FilialService } from 'src/app/services/dados2-filial.service';
 })
 export class ListaFilialPage implements OnInit {
 
-  //filial:any = [];
+  protected filial$: any;
 
-  constructor(private prov: Dados2FilialService) { }
+
+  constructor(private DadosFilialService: DadosFilialService, public alertController: AlertController) { }
 
   ngOnInit() {
-    //this.listaFilial();
+    this.filial$ = this.DadosFilialService.getAll();
   }
 
-  //listaFilial(){
-    //this.prov.getFilial().subscribe(
+  remover(key){
+    this.DadosFilialService.remove(key).then(
+      res=>{
+        this.presentAlert("Aviso!", "Usuario apagado!");
+      },
+      err=>{
+        this.presentAlert("Erro!", "Não foi possivel apagar o usuario!");
+      }
+    )
+  }
+  async presentAlert(titulo: string, texto: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      //subHeader: 'Subtitle',
+      message: texto,
+      buttons: ['OK']
+    });
 
-      //data=>{
-       // let resposta = (data as any)._body;
-        //resposta = JSON.parse(resposta);
-        //this.filial =  resposta;
-      //},
-      //error=>{
-        //console.log(error);
-      //}
-    //).add();
-  //}
+    await alert.present();
+  }
 }

@@ -11,6 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./cadastroloja.page.scss'],
 })
 export class CadastrolojaPage implements OnInit {
+  
   private filial:Filial = new Filial;
 
   constructor(private DadosFilial: DadosFilialService, private alertController: AlertController,

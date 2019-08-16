@@ -8,44 +8,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card" *ngFor="let f of filial" >
-      <ion-img src="{{f.img}}"></ion-img>
-      <ion-card-header>
-        <ion-card-title>Endereço: {{f.logradouro}}</ion-card-title>
-        <ion-card-subtitle>Referencia: {{f.referencia}}</ion-card-subtitle>
-        <ion-grid>
-            <ion-row>
-              <ion-col>
-        <ion-card-subtitle>Telefone: {{f.telefone1}}</ion-card-subtitle>
-              </ion-col>
-            </ion-row>  
-            <ion-row>
-                <ion-col>
-        <ion-card-subtitle>Telefone: {{f.telefone2}}</ion-card-subtitle>
-                </ion-col>
-            </ion-row>  
-        </ion-grid>
-        <ion-card-subtitle>
-           Horário Abertura: {{f.horarioAberto}}
-        </ion-card-subtitle>
-        <ion-card-subtitle>
-            Horário Fechamento: {{f.horarioFechado}}
-         </ion-card-subtitle>
-      </ion-card-header>
-      <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-button color="danger">Exluir</ion-button>
-            </ion-col>
-            <ion-col>
-      
-            </ion-col>
-            <ion-col>
-              <ion-button color="success">
-                Editar
-              </ion-button> 
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-    </ion-card>
+  <ion-searchbar showcancelbutton="" (ioninput)="filterList($event)"></ion-searchbar>
+  <ion-list *ngIf="filial$ | async as filial">
+      <ion-item *ngFor="let filial of filial">
+          <ion-card class="welcome-card">
+              <ion-card-header>
+              <ion-img src="{{filial.img}}"></ion-img>
+              </ion-card-header>
+              <ion-card-header>
+                <p>Logradouro: {{filial.logradouro}}</p>
+                <p>Horário de funcionamento: {{filial.horarioAberto}} - {{filial.horarioFechado}}</p>
+              </ion-card-header>
+              <ion-button (click)="remover(filial.key)" color="danger">Excluir</ion-button>     
+            </ion-card>
+      </ion-item>
+   </ion-list>
 </ion-content>

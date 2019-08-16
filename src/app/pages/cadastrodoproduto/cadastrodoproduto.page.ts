@@ -4,6 +4,7 @@ import { DadosProdutoService } from 'src/app/services/dados-produto.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { DadosFilialService } from 'src/app/services/dados-filial.service';
 
 @Component({
   selector: 'app-cadastrodoproduto',
@@ -12,7 +13,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class CadastrodoprodutoPage implements OnInit {
   
-  public produto: Produto;
+  private produto:Produto = new Produto;
+  protected filial$: any;
 
   constructor(private DadosProduto: DadosProdutoService, private alertController: AlertController,
     public afAuth: AngularFireAuth,
@@ -28,8 +30,7 @@ export class CadastrodoprodutoPage implements OnInit {
           console.log("Cadastrado");
           this.presentAlert("Aviso!", "Produto cadastrado.");
           this.produto = new Produto
-        }
-        ,
+        },
         err => {
           console.log("Epá! Não foi cadastrado!" + err);
           this.presentAlert("Erro!", "Epá! Não foi cadastrado!");
@@ -52,5 +53,4 @@ export class CadastrodoprodutoPage implements OnInit {
     });
     await alert.present();
   }
-
 }

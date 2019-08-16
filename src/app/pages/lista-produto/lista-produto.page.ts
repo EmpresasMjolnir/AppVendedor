@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Dados2ProdutosService } from 'src/app/services/dados2-produtos.service';
+import { DadosProdutoService } from 'src/app/services/dados-produto.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lista-produto',
@@ -8,25 +9,35 @@ import { Dados2ProdutosService } from 'src/app/services/dados2-produtos.service'
 })
 export class ListaProdutoPage implements OnInit {
 
-  produtos:any = [];
+  protected produto$: any;
 
-  constructor(private prov: Dados2ProdutosService) { }
+  constructor(
+    private DadosProdutoService: DadosProdutoService, public alertController: AlertController
+  ) { }
 
   ngOnInit() {
-    //this.listaProduto();
+    this.produto$ = this.DadosProdutoService.getAll();
+  }
+  
+  remover(key){
+    this.DadosProdutoService.remove(key).then(
+      res=>{
+        this.presentAlert("Aviso!", "Usuario apagado!");
+      },
+      err=>{
+        this.presentAlert("Erro!", "Não foi possivel apagar o usuario!");
+      }
+    )
+  }
+  async presentAlert(titulo: string, texto: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      //subHeader: 'Subtitle',
+      message: texto,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
- // listaProduto(){
-  //  this.prov.getProdutos().subscribe(
-
-//      data=>{
-      //  let resposta = (data as any)._body;
-        //resposta = JSON.parse(resposta);
-        //this.produtos =  resposta;
-      //},
-      //error=>{
-       // console.log(error);
-      //}
-    //).add();
-  //}
 }
