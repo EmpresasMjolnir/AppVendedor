@@ -22,10 +22,10 @@ export class ListaProdutoPage implements OnInit {
   remover(key){
     this.DadosProdutoService.remove(key).then(
       res=>{
-        this.presentAlert("Aviso!", "Usuario apagado!");
+        this.presentAlert("Aviso!", "Produto apagado!");
       },
       err=>{
-        this.presentAlert("Erro!", "Não foi possivel apagar o usuario!");
+        this.presentAlert("Erro!", "Não foi possivel apagar o produto!");
       }
     )
   }

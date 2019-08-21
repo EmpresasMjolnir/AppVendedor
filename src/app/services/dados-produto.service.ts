@@ -22,7 +22,6 @@ export class DadosProdutoService {
         )
       )
   }
-  
   remove(key: string) {
     return this.bd.object("produto/" + key).remove()
   }

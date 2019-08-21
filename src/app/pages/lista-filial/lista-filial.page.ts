@@ -21,10 +21,10 @@ export class ListaFilialPage implements OnInit {
   remover(key){
     this.DadosFilialService.remove(key).then(
       res=>{
-        this.presentAlert("Aviso!", "Usuario apagado!");
+        this.presentAlert("Aviso!", "Filial apagado!");
       },
       err=>{
-        this.presentAlert("Erro!", "Não foi possivel apagar o usuario!");
+        this.presentAlert("Erro!", "Não foi possivel apagar o filial!");
       }
     )
   }
